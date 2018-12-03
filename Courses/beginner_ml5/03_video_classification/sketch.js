@@ -1,16 +1,9 @@
-// Daniel Shiffman
-// http://youtube.com/thecodingtrain
-// http://codingtra.in
-
-// Webcam Image Classification with ml5
-// https://youtu.be/D9BoBSkLvFo
-
 let mobilenet;
 let video;
 let label = '';
 
 function modelReady() {
-  console.log('Model is ready!!!');
+  console.log('Modelo!');
   mobilenet.predict(gotResults);
 }
 
@@ -18,15 +11,10 @@ function gotResults(error, results) {
   if (error) {
     console.error(error);
   } else {
-    //console.log(results);
     label = results[0].className;
     mobilenet.predict(gotResults);
   }
 }
-
-// function imageReady() {
-//   image(puffin, 0, 0, width, height);
-// }
 
 function setup() {
   createCanvas(640, 550);
